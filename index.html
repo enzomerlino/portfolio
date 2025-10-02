@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Portfólio</title>
+</head>
+
+<body>
+    <div class="language-dropdown">
+        <div class="selected-language" onclick="toggleDropdown()">PT</div>
+        <ul class="language-options">
+            <li onclick="changeLanguage('pt')">Português</li>
+            <li onclick="changeLanguage('en')">English</li>
+        </ul>
+    </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#sobre-mim" data-lang="sobre">Sobre Mim</a></li>
+                <li><a href="#projetos" data-lang="projetos">Projetos</a></li>
+                <li><a href="#habilidades" data-lang="habilidades">Habilidades</a></li>
+                <li><a href="#contato" data-lang="contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Secção Sobre mim -->
+    <section id="sobre-mim">
+        <div class="container-sobre">
+            <div class="blob-background"></div>
+            <div class="foto-perfil">
+                <img src="/img/foto_perfil.jpg" alt="Foto de Enzo Merlino">
+            </div>
+            <div class="texto-sobre">
+                <h2 data-lang="sobre">Sobre Mim</h2>
+                <p class="branco" data-lang="sobre-descricao">
+                    Olá! Meu nome é <strong>Enzo Merlino</strong>, sou estudante do último ano do Ensino Médio e um
+                    entusiasta de tecnologia.
+                    Desde que comecei a programar em 2023, venho me aprofundando em áreas como <strong>Banco de
+                        Dados</strong> e <strong>desenvolvimento web com PHP</strong>.
+                    <br><br>
+                    Tenho buscado constantemente evoluir minhas habilidades através de projetos práticos e estudos
+                    autodidatas.
+                    Gosto de criar interfaces bem estruturadas, soluções funcionais e aprender novas tecnologias que me
+                    desafiem.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secção Projetos -->
+    <section id="projetos">
+        <h2 data-lang="projetos">Projetos</h2>
+
+        <!-- Botões de filtro -->
+        <div class="dropdown-filtro">
+            <label for="filtro" data-lang="filtro">Filtrar por categoria:</label>
+            <select id="filtro" onchange="filtrarProjetosDropdown()">
+                <option data-lang="todos" value="todos">Todos</option>
+                <option value="html">HTML</option>
+                <option value="python">Python</option>
+                <option value="java">Java</option>
+                <option value="php">PHP</option>
+            </select>
+        </div>
+
+        <!-- Cards dos projetos -->
+        <div class="grid-container">
+            <div class="repo-card html">
+                <img src="img/projetos/roube-um-brainrot.png" alt="Roube um Brainrot!">
+                <div class="repo-card-content">
+                    <h3><a href="https://github.com/enzomerlino/jogodobrainrot" target="_blank">Jogo de Cartas
+                            Brainrot</a></h3>
+                    <p>Um jogo de cartas utilizando JavaScript, com um tema popular na internet "Brainrots"!</p>
+                </div>
+            </div>
+
+            <div class="repo-card html">
+                <img src="img/projetos/mundo-pet.png" alt="Mundo-Pet">
+                <div class="repo-card-content">
+                    <h3><a href="https://github.com/enzomerlino/mundo-pet" target="_blank">Mundo Pet</a></h3>
+                    <p>Site fictício de pet shop desenvolvido com HTML e CSS, focado em layout responsivo e boa
+                        apresentação visual.</p>
+                </div>
+            </div>
+
+            <div class="repo-card html">
+                <img src="img/projetos/calculadora.png" alt="Calculadora">
+                <div class="repo-card-content">
+                    <h3><a href="https://github.com/enzomerlino/calculadora-html" target="_blank">Calculadora</a></h3>
+                    <p>Calculadora feita com HTML e JS usando lógica simples.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Seção Habilidades -->
+    <section id="habilidades">
+        <h2 data-lang="habilidades">Habilidades</h2>
+        <div class="skills-scroller">
+            <div class="repo-card skill">
+                <div class="repo-card-content">
+                    <i class="fab fa-html5"></i>
+                    <h3>HTML5</h3>
+                </div>
+            </div>
+
+            <div class="repo-card skill">
+                <div class="repo-card-content">
+                    <i class="fab fa-css3-alt"></i>
+                    <h3>CSS3</h3>
+                </div>
+            </div>
+
+            <div class="repo-card skill">
+                <div class="repo-card-content">
+                    <i class="fab fa-js"></i>
+                    <h3>JavaScript</h3>
+                </div>
+            </div>
+
+            <div class="repo-card skill">
+                <div class="repo-card-content">
+                    <i class="fas fa-database"></i>
+                    <h3 data-lang="db">Banco de Dados</h3>
+                </div>
+            </div>
+
+            <div class="repo-card skill">
+                <div class="repo-card-content">
+                    <i class="fab fa-php"></i>
+                    <h3>PHP</h3>
+                </div>
+            </div>
+
+            <div class="repo-card skill">
+                <div class="repo-card-content">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secção Contatos -->
+    <section id="contato">
+        <h2 data-lang="contato">Contato</h2>
+        <div class="contato-container">
+            <a href="mailto:seuemail@example.com" class="contato-item" target="_blank">
+                <i class="fas fa-envelope"></i>
+                <span>Email</span>
+            </a>
+            <a href="https://github.com/enzomerlino" class="contato-item" target="_blank">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/enzo-merlino" class="contato-item" target="_blank">
+                <i class="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p data-lang="footer">
+            &copy; 2025 Enzo Merlino | Desenvolvido por
+            <a href="https://github.com/enzomerlino">Enzo Merlino</a>
+        </p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
