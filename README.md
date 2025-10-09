@@ -42,7 +42,7 @@ Aqui estão alguns dos meus projetos desenvolvidos:
 
 Fique à vontade para entrar em contato comigo por meio das redes abaixo:
 
-- Email: [seuemail@example.com](mailto:seuemail@example.com)  
+- Email: [enzo.merlino@outlook.com.br](mailto:enzo.merlino@outlook.com.br)  
 - GitHub: [https://github.com/enzomerlino](https://github.com/enzomerlino)  
 - LinkedIn: [https://www.linkedin.com/in/enzo-merlino](https://www.linkedin.com/in/enzo-merlino)
 
