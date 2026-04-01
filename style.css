@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --bg: #f9fafb;
+    --card: #ffffff;
+    --text-color: #494949;
+    --text-light: #6b7280;
+    --border: #e5e7eb;
+    --hover: #f3f4f6;
+    --primary-color: #60a5fa;
+
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+:root.dark {
+    --bg: #0f1115;
+    --card: #1a1d24;
+    --text-color: #e5e7eb;
+    --text-light: #9ca3af;
+    --border: #2a2f3a;
+    --hover: #22252d;
+    --primary-color: #60a5fa;
+    --shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji";
+    background-color: var(--bg);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 100vh;
+}
+
+header {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    width: 90%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    padding: 15px 30px;
+    border-radius: 50px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    transition: all 0.3s ease;
+}
+
+header img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    font-size: 15px;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+.theme-btn {
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text-light);
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.theme-btn i {
+    color: var(--text-color);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.theme-btn:active {
+    transform: scale(0.9);
+}
+
+.theme-btn:hover {
+    background: var(--hover);
+    transform: rotate(15deg);
+    color: var(--primary-color);
+}
+
+.icon-out {
+    transform: rotate(90deg) scale(0.5);
+    opacity: 0;
+}
+
+.icon-in {
+    transform: rotate(-90deg) scale(0.5);
+    opacity: 0;
+}
+
+.custom-select {
+    position: relative;
+    width: 140px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.select-trigger {
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text-color);
+    height: 38px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.select-trigger:hover {
+    background: var(--hover);
+    border-color: var(--primary-color);
+}
+
+.arrow {
+    width: 7px;
+    height: 7px;
+    border-right: 2px solid var(--text-light);
+    border-bottom: 2px solid var(--text-light);
+    transform: rotate(45deg);
+    margin-top: -4px;
+    margin-left: 8px;
+    transition: all 0.3s ease;
+}
+
+.custom-select.open .arrow {
+    transform: rotate(-135deg);
+    margin-top: 3px;
+    border-color: var(--primary-color);
+}
+
+.select-options {
+    position: absolute;
+    top: 115%;
+    left: 0;
+    width: 100%;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+}
+
+.custom-select.open .select-options {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.option {
+    padding: 10px 14px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.option:hover {
+    background: var(--option-hover);
+    color: var(--primary-color);
+}
